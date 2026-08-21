@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Modo IA | De la idea a la venta</title>
+  <meta name="description" content="Taller presencial para convertir una idea en una oferta digital vendible usando IA, estrategia y automatización comercial." />
+  <style>
+    :root{
+      --navy:#070d35;
+      --blue:#236cf0;
+      --violet:#6f35ff;
+      --magenta:#d719a5;
+      --coral:#ff624d;
+      --soft:#f7f7ff;
+      --line:#d9dcf3;
+      --white:#ffffff;
+      --text:#0b123f;
+      --muted:#59607a;
+      --shadow:0 20px 50px rgba(17,25,74,.12);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--text);background:
+      radial-gradient(circle at 0% 0%,rgba(112,56,255,.18),transparent 28%),
+      radial-gradient(circle at 100% 15%,rgba(255,98,77,.16),transparent 30%),
+      linear-gradient(180deg,#fff 0%,#fbfbff 100%);line-height:1.5}
+    a{text-decoration:none;color:inherit}
+    .wrap{width:min(1160px,92%);margin:auto}
+    .topbar{padding:22px 0;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{font-weight:900;letter-spacing:.28em;font-size:20px;color:var(--navy)}
+    .brand span{background:linear-gradient(90deg,var(--violet),var(--magenta),var(--coral),#0cb8f2);-webkit-background-clip:text;color:transparent}
+    .mini-cta{padding:11px 18px;border-radius:999px;background:var(--navy);color:white;font-weight:800;font-size:14px}
+    .hero{display:grid;grid-template-columns:1.18fr .82fr;gap:48px;align-items:center;padding:42px 0 70px}
+    .kicker{display:inline-flex;align-items:center;gap:8px;padding:7px 12px;border:1px solid rgba(84,67,221,.18);background:#fff;border-radius:999px;font-weight:800;color:#4a43d9;font-size:13px;letter-spacing:.08em;text-transform:uppercase}
+    h1{font-size:clamp(52px,7vw,88px);line-height:.92;margin:18px 0 22px;letter-spacing:-.055em;color:var(--navy)}
+    .grad{background:linear-gradient(90deg,var(--violet),var(--magenta),var(--coral),var(--blue));-webkit-background-clip:text;color:transparent}
+    .hero p{font-size:21px;color:var(--muted);max-width:760px;margin:0 0 25px}
+    .promise{display:inline-block;padding:16px 19px;border-radius:18px;background:linear-gradient(90deg,var(--violet),var(--magenta),var(--blue));color:#fff;font-weight:800;font-size:18px;box-shadow:var(--shadow)}
+    .bullets{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:28px}
+    .bullet{background:rgba(255,255,255,.78);border:1px solid var(--line);padding:15px;border-radius:16px;font-size:14px;font-weight:800}
+    .card{background:rgba(255,255,255,.94);border:1px solid rgba(106,77,255,.14);border-radius:30px;padding:28px;box-shadow:var(--shadow);position:relative;overflow:hidden}
+    .card:before{content:"";position:absolute;inset:0 0 auto 0;height:7px;background:linear-gradient(90deg,var(--violet),var(--magenta),var(--coral),var(--blue))}
+    .card h2{font-size:29px;margin:4px 0 8px}
+    .card .sub{color:var(--muted);margin-bottom:20px}
+    label{display:block;font-size:13px;font-weight:800;margin:13px 0 6px}
+    input,select,textarea{width:100%;padding:14px 14px;border:1px solid #d7daf0;border-radius:13px;background:#fff;font:inherit;color:var(--text);outline:none}
+    input:focus,select:focus,textarea:focus{border-color:#6f35ff;box-shadow:0 0 0 4px rgba(111,53,255,.08)}
+    textarea{min-height:100px;resize:vertical}
+    .check{display:flex;gap:10px;align-items:flex-start;margin:14px 0 18px;color:var(--muted);font-size:12px}
+    .check input{width:auto;margin-top:3px}
+    button{width:100%;border:0;border-radius:14px;padding:15px;background:linear-gradient(90deg,var(--violet),var(--magenta),var(--blue));color:white;font-size:17px;font-weight:900;cursor:pointer;box-shadow:0 14px 30px rgba(111,53,255,.22)}
+    button:disabled{opacity:.65;cursor:not-allowed}
+    .form-note{font-size:12px;color:var(--muted);margin-top:10px;text-align:center}
+    .success,.error{display:none;margin-top:14px;padding:12px 14px;border-radius:12px;font-weight:700;font-size:14px}
+    .success{background:#ecfff5;color:#156d43;border:1px solid #bdebd2}.error{background:#fff3f2;color:#9c2e2b;border:1px solid #ffd2ce}
+    section{padding:70px 0}
+    .section-title{text-align:center;max-width:780px;margin:0 auto 38px}.section-title h2{font-size:42px;line-height:1.05;margin:0 0 12px}.section-title p{color:var(--muted);font-size:18px}
+    .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.feature{background:#fff;border:1px solid var(--line);border-radius:22px;padding:24px;box-shadow:0 10px 26px rgba(17,25,74,.06)}
+    .icon{width:52px;height:52px;border-radius:16px;display:grid;place-items:center;color:#fff;font-size:25px;background:linear-gradient(135deg,var(--violet),var(--magenta),var(--coral))}.feature h3{margin:16px 0 8px;font-size:21px}.feature p{margin:0;color:var(--muted)}
+    .split{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center}.panel{background:#fff;border:1px solid var(--line);border-radius:24px;padding:28px}.panel h3{font-size:28px;margin-top:0}.panel ul{padding-left:20px;color:var(--muted)}.panel li{margin:10px 0}
+    .cta{border-radius:30px;padding:42px;background:linear-gradient(120deg,#1e1a5b,#6f35ff 45%,#d719a5 70%,#1f74f2);color:#fff;display:flex;justify-content:space-between;align-items:center;gap:30px}.cta h2{font-size:39px;line-height:1.05;margin:0 0 8px}.cta p{margin:0;color:#ebe9ff}.cta a{display:inline-flex;white-space:nowrap;padding:15px 20px;border-radius:999px;background:#fff;color:#261e77;font-weight:900}
+    footer{padding:28px 0 40px;color:#737a91;font-size:13px;text-align:center}
+    .logos{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;margin-top:25px;color:#3b426a;font-weight:900}.logos span{padding:10px 14px;border:1px solid var(--line);border-radius:999px;background:#fff}
+    @media (max-width:900px){.hero,.split{grid-template-columns:1fr}.hero{padding-top:20px}.bullets,.grid3{grid-template-columns:1fr}.card{order:2}.cta{flex-direction:column;align-items:flex-start}.mini-cta{display:none}}
+  </style>
+</head>
+<body>
+  <header class="wrap topbar">
+    <div class="brand">MODO <span>IA</span></div>
+    <a class="mini-cta" href="#registro">Entrar a la lista prioritaria</a>
+  </header>
+
+  <main>
+    <div class="wrap hero">
+      <div>
+        <div class="kicker">Taller presencial · Cupos limitados</div>
+        <h1>De la <span class="grad">idea</span><br/>a la <span class="grad">venta</span></h1>
+        <p>Convierte una idea en una oferta digital clara, vendible y preparada para captar clientes con IA, estrategia y automatización comercial.</p>
+        <div class="promise">No vienes a mirar herramientas. Vienes a construir algo vendible.</div>
+        <div class="bullets">
+          <div class="bullet">✓ Taller presencial</div>
+          <div class="bullet">✓ Fecha y precio por definir</div>
+          <div class="bullet">✓ Enfoque práctico y aplicable</div>
+        </div>
+      </div>
+
+      <div class="card" id="registro">
+        <h2>Entra a la lista prioritaria</h2>
+        <div class="sub">Te avisamos primero fecha, detalles, precio y apertura de cupos.</div>
+        <form id="leadForm">
+          <label for="nombre">Nombre y apellido *</label>
+          <input id="nombre" name="nombre" required placeholder="Tu nombre" />
+
+          <label for="email">Correo electrónico *</label>
+          <input id="email" name="email" type="email" required placeholder="tu@correo.com" />
+
+          <label for="telefono">WhatsApp *</label>
+          <input id="telefono" name="telefono" required placeholder="+56 9 ..." />
+
+          <label for="idea">¿Qué te gustaría convertir en una oferta?</label>
+          <textarea id="idea" name="idea" placeholder="Ej.: asesoría, curso, servicio, workshop, producto digital..."></textarea>
+
+          <label for="etapa">¿En qué etapa estás?</label>
+          <select id="etapa" name="etapa">
+            <option value="Tengo una idea, pero aún no la he estructurado">Tengo una idea, pero aún no la he estructurado</option>
+            <option value="Ya tengo una oferta, pero no vende como quiero">Ya tengo una oferta, pero no vende como quiero</option>
+            <option value="Ya vendo y quiero automatizar">Ya vendo y quiero automatizar</option>
+          </select>
+
+          <input type="hidden" name="fuente" value="Landing Modo IA" />
+          <input type="hidden" name="campana" value="lista_prioritaria_modo_ia" />
+
+          <div class="check"><input type="checkbox" required /> <span>Acepto recibir información relacionada con el taller y la apertura de cupos.</span></div>
+          <button id="submitBtn" type="submit">Quiero entrar a la lista prioritaria</button>
+          <div class="form-note">Sin spam. Solo información del taller y próximos pasos.</div>
+          <div class="success" id="successMsg">Registro recibido. Revisa tu correo: te enviamos la confirmación de tu ingreso a la lista prioritaria.</div>
+          <div class="error" id="errorMsg">No pudimos procesar el registro. Inténtalo nuevamente en unos segundos.</div>
+        </form>
+      </div>
+    </div>
+
+    <section>
+      <div class="wrap">
+        <div class="section-title"><h2>Lo que vas a construir en el taller</h2><p>El objetivo es salir con una base comercial concreta, no con una libreta llena de teoría.</p></div>
+        <div class="grid3">
+          <div class="feature"><div class="icon">✦</div><h3>IA con intención</h3><p>Prompts y marcos prácticos para definir identidad, propuesta de valor, diferenciación y contenido.</p></div>
+          <div class="feature"><div class="icon">↻</div><h3>Automatización comercial</h3><p>Mensajes, captación y seguimiento para dejar de depender de tareas manuales y conversaciones sueltas.</p></div>
+          <div class="feature"><div class="icon">✓</div><h3>Implementación real</h3><p>Recursos, plantillas y una guía de acción para aplicar lo construido desde el día siguiente.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap split">
+        <div class="panel"><h3>Este taller es para ti si…</h3><ul><li>Tienes una idea, conocimiento o servicio y no sabes cómo convertirlo en una oferta clara.</li><li>Ya tienes una oferta, pero te cuesta comunicarla o venderla de forma constante.</li><li>Quieres usar IA con criterio comercial, no solo para “hacer posts”.</li><li>Quieres automatizar parte de la captación y el seguimiento sin perder el toque humano.</li></ul></div>
+        <div class="panel"><h3>Metodología</h3><ul><li>Práctica y aplicada.</li><li>Enfoque orientado a resultados.</li><li>Trabajo sobre casos e ideas reales.</li><li>Materiales y plantillas para continuar después del taller.</li></ul><div class="logos"><span>Aira Maya</span><span>ZentrixCo</span></div></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap cta">
+        <div><h2>La fecha todavía no está publicada.<br/>Tu lugar en la lista sí puede estarlo.</h2><p>Regístrate y recibe la información antes de la apertura general.</p></div>
+        <a href="#registro">Quiero prioridad</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrap">Modo IA · Aira Maya + ZentrixCo · Taller presencial</footer>
+
+  <script>
+    // REEMPLAZA ESTA URL POR TU WEBHOOK PERSONALIZADO DE MAKE.
+    const MAKE_WEBHOOK_URL = "PEGA_AQUI_TU_WEBHOOK_DE_MAKE";
+
+    const form = document.getElementById('leadForm');
+    const btn = document.getElementById('submitBtn');
+    const ok = document.getElementById('successMsg');
+    const err = document.getElementById('errorMsg');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      ok.style.display = 'none';
+      err.style.display = 'none';
+      btn.disabled = true;
+      btn.textContent = 'Registrando...';
+
+      const data = Object.fromEntries(new FormData(form).entries());
+      data.timestamp = new Date().toISOString();
+      data.url_origen = window.location.href;
+
+      try {
+        if (!MAKE_WEBHOOK_URL || MAKE_WEBHOOK_URL.includes('https://hook.us2.make.com/ip53xgg5dkkd3hxfkmjqht22q1pxzqqg')) {
+          throw new Error('Webhook no configurado');
+        }
+
+        const response = await fetch(MAKE_WEBHOOK_URL, {
+          method: 'POST',
+          headers: {'Content-Type':'application/json'},
+          body: JSON.stringify(data)
+        });
+
+        if (!response.ok) throw new Error('HTTP ' + response.status);
+
+        ok.style.display = 'block';
+        form.reset();
+        ok.scrollIntoView({behavior:'smooth', block:'center'});
+      } catch (e) {
+        console.error(e);
+        err.style.display = 'block';
+      } finally {
+        btn.disabled = false;
+        btn.textContent = 'Quiero entrar a la lista prioritaria';
+      }
+    });
+  </script>
+</body>
+</html>
